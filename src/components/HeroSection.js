@@ -19,8 +19,8 @@ function HeroSection() {
       <div className="hero-content">
         <h2>Selamat Ulang Tahun, Sayang!</h2>
         <p>
-          "You Are my other half, my soul, and my everthing" Selamat Ulang Tahun
-          Sayang, Love you to the moon and back ❤️
+          "You Are my other half, my soul, and my everything" Selamat Ulang
+          Tahun Sayang, Love you to the moon and back ❤️
         </p>
         <div className="hero-button">
           <button className="play-button" onClick={handlePlayClick}>
