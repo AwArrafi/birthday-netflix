@@ -1,0 +1,97 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+  padding: 30px;
+  background-color: black;
+}
+
+.item img,
+.item video {
+  width: 100%;
+  border-radius: 10px;
+  aspect-ratio: 3/4;
+  object-fit: fill;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.item img:hover,
+.item video:hover {
+  transform: scale(1.05);
+}
+
+/* MODAL */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: row;
+  background-color: #111;
+  border-radius: 10px;
+  max-width: 70%; /* Kurangi lebar modal */
+  max-height: 80%;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.modal-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-image img,
+.modal-image video {
+  max-width: 100%;
+  max-height: 70vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+}
+
+.modal-text {
+  flex: 1;
+  margin-left: 20px;
+  max-width: 300px; /* Batasi lebar teks */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-text h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.modal-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-top: 0;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #e50914;
+}

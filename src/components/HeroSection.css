@@ -1,0 +1,136 @@
+.hero {
+  position: relative;
+  background-image: url("/src/assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 1.5rem;
+  padding-bottom: 4rem;
+  color: white;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 85%,
+    rgba(0, 0, 0, 0.7),
+    black 100%
+  );
+
+  z-index: 1; /* Pastikan vignette berada di depan background tapi di belakang konten */
+}
+
+.hero-content {
+  display: inline-block;
+  position: relative; /* Ubah ke 'relative' untuk memastikan konten berada di atas vignette */
+  padding: 3rem;
+  border-radius: 10px;
+  z-index: 2; /* Tambahkan z-index agar konten berada di atas pseudo-element */
+  font-weight: bolder;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  width: 68%;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.play-button {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: white; /* Pastikan background diatur di sini */
+}
+
+.play-button:hover {
+  background-color: rgba(
+    216,
+    210,
+    210,
+    0.8
+  ); /* Pastikan selektor hover benar */
+}
+
+.play-button span {
+  margin-right: 10px;
+}
+
+/* OVERLAY PLAY VIDEO */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay-content {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  border: none;
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 9999;
+  background-color: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-button:hover {
+  color: #ff0000;
+}
+
+video {
+  width: 100%;
+  border-radius: 10px;
+}
